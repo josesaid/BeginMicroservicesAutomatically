@@ -1,4 +1,4 @@
-package com.mx.development.beginmicroservicesautomatically;
+package com.mx.development;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
