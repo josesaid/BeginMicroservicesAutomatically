@@ -1,4 +1,4 @@
-package com.mx.development.helper;
+package com.mx.development.adapters;
 
 import com.mx.development.Maven;
 import com.mx.development.exceptions.MavenCompilationException;
@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 
-public abstract class MavenExecutorAdapter implements Maven {
+public abstract class MavenSpringBootExecutorAdapter implements Maven {
 
-    public void executeStep(Path projectFolder, String stepGoal) {
+    public void executeSpringBootApp(Path projectFolder, String command) {
         String microserviceName = projectFolder.getFileName().toString();
         int exitCode;
         try {
-            exitCode = execute(projectFolder, stepGoal);
+            exitCode = execute(projectFolder, command);
         } catch (InterruptedException e) {
             throw new MavenCompilationException("Interrupted during compilation", e);
         } catch (IOException e) {
@@ -25,6 +25,6 @@ public abstract class MavenExecutorAdapter implements Maven {
         System.out.println("MicroserviceName: <" + microserviceName + "> status code: " + exitCode);
     }
 
-    protected abstract int execute(Path projectFolder, String compileGoal)
+    protected abstract int execute(Path projectFolder, String command)
             throws InterruptedException, IOException;
 }

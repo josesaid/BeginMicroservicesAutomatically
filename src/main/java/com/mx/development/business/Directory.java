@@ -35,9 +35,9 @@ public class Directory {
                     directories.add(file);
                 }
             }
-            System.out.println();
+            System.out.println("--------------------------------------------------------------------------------");
             System.out.println("Found " + directories.size() + " directories to be processed.");
-            System.out.println();
+            System.out.println("--------------------------------------------------------------------------------");
             return Optional.of(directories);
         }
         return Optional.empty();
